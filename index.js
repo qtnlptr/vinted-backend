@@ -22,6 +22,10 @@ const offerRoutes = require("./routes/offer");
 app.use(userRoutes);
 app.use("/offer", offerRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json("bienvenue");
+});
+
 app.all("*", (req, res) => {
   res.status(404).json({ message: "Page not found" });
 });

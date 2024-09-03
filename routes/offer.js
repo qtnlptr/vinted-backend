@@ -29,6 +29,7 @@ router.post("/publish", fileUpload(), isAuthenticated, async (req, res) => {
       ],
       owner: req.user,
     });
+
     /// J'upload l'image sur Cloudinary avec le chemin souhaité
     const pictureToUpload = convertToBase64(req.files.picture);
     const productImage = await cloudinary.uploader.upload(pictureToUpload, {
